@@ -1,0 +1,130 @@
+:root {
+  --bg-light: #ffc09f;
+  --bg-dark: #e09f8a;
+  --btn-light: #ffee93;
+  --btn-dark: #e6d68d;
+  --hover-light: #a0ced9;
+  --hover-dark: #8fbabf;
+  --text-light: #333;
+  --text-dark: #f4f4f4;
+  --border-radius: 8px;
+  --transition: 0.3s;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0; padding: 0;
+  background: var(--bg-light);
+  color: var(--text-light);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+}
+
+header {
+  width: 100%; max-width: 400px;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px;
+}
+
+.controls select, .controls button {
+  padding: 10px;
+  border: none;
+  background: var(--btn-light);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+#calculator {
+  width: 100%; max-width: 400px;
+  background: var(--bg-light);
+  margin: 10px;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background var(--transition);
+}
+
+#display {
+  width: 100%; height: 60px;
+  background: #222; color: #fff;
+  text-align: right;
+  line-height: 60px;
+  font-size: 1.5rem;
+  border-radius: var(--border-radius);
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+}
+
+#buttons button {
+  padding: 18px;
+  font-size: 1.2rem;
+  background: var(--btn-light);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background var(--transition), transform 0.1s;
+}
+
+#buttons button:hover {
+  background: var(--hover-light);
+}
+
+#buttons button:active {
+  transform: scale(0.97);
+}
+
+.operator {
+  background: var(--hover-light);
+  color: #fff;
+}
+
+footer {
+  margin-top: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Mode visibility */
+.mode-btn { display: none; }
+body.mode-standard .mode-btn.standard,
+body.mode-scientific .mode-btn.scientific,
+body.mode-programmer .mode-btn.programmer,
+body.mode-statistics .mode-btn.statistics,
+body.mode-conversion .mode-btn.conversion,
+body.mode-graphing .mode-btn.graphing {
+  display: inline-block;
+}
+
+/* Dark theme */
+body[data-theme='dark'] {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body[data-theme='dark'] #calculator {
+  background: var(--bg-dark);
+}
+
+body[data-theme='dark'] select,
+body[data-theme='dark'] .controls button,
+body[data-theme='dark'] #buttons button {
+  background: var(--btn-dark);
+  color: var(--text-dark);
+}
+
+body[data-theme='dark'] #buttons button:hover {
+  background: var(--hover-dark);
+}
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator-by mode</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="mode-standard">
+  <header>
+    <h1>Multi-Mode Calculator</h1>
+    <div class="controls">
+      <select id="mode-select">
+        <option value="standard">Standard</option>
+        <option value="scientific">Scientific</option>
+        <option value="programmer">Programmer</option>
+        <option value="statistics">Statistics</option>
+        <option value="conversion">Converter</option>
+        <option value="graphing">Graph</option>
+      </select>
+      <button id="theme-toggle">🌙</button>
+    </div>
+  </header>
+
+  <div id="calculator">
+    <div id="display">0</div>
+    <div id="buttons">
+      <!-- Standard -->
+      <button class="mode-btn standard" data-action="clear">C</button>
+      <button class="mode-btn standard" data-digit="7">7</button>
+      <button class="mode-btn standard" data-digit="8">8</button>
+      <button class="mode-btn standard" data-digit="9">9</button>
+      <button class="mode-btn standard operator" data-action="divide">÷</button>
+
+      <button class="mode-btn standard" data-digit="4">4</button>
+      <button class="mode-btn standard" data-digit="5">5</button>
+      <button class="mode-btn standard" data-digit="6">6</button>
+      <button class="mode-btn standard operator" data-action="multiply">×</button>
+
+      <button class="mode-btn standard" data-digit="1">1</button>
+      <button class="mode-btn standard" data-digit="2">2</button>
+      <button class="mode-btn standard" data-digit="3">3</button>
+      <button class="mode-btn standard operator" data-action="subtract">−</button>
+
+      <button class="mode-btn standard" data-digit="0">0</button>
+      <button class="mode-btn standard" data-digit=".">.</button>
+      <button class="mode-btn standard operator" data-action="calculate">=</button>
+      <button class="mode-btn standard operator" data-action="add">+</button>
+
+      <!-- Scientific -->
+      <button class="mode-btn scientific operator" data-action="sin">sin</button>
+      <button class="mode-btn scientific operator" data-action="cos">cos</button>
+      <button class="mode-btn scientific operator" data-action="tan">tan</button>
+      <button class="mode-btn scientific operator" data-action="sqrt">√</button>
+
+      <button class="mode-btn scientific operator" data-action="log">log</button>
+      <button class="mode-btn scientific operator" data-action="ln">ln</button>
+      <button class="mode-btn scientific operator" data-action="exp">eˣ</button>
+      <button class="mode-btn scientific operator" data-action="pow">xʸ</button>
+
+      <!-- Programmer -->
+      <button class="mode-btn programmer operator" data-action="bin">BIN</button>
+      <button class="mode-btn programmer operator" data-action="oct">OCT</button>
+      <button class="mode-btn programmer operator" data-action="dec">DEC</button>
+      <button class="mode-btn programmer operator" data-action="hex">HEX</button>
+      <button class="mode-btn programmer operator" data-action="and">AND</button>
+      <button class="mode-btn programmer operator" data-action="or">OR</button>
+      <button class="mode-btn programmer operator" data-action="xor">XOR</button>
+      <button class="mode-btn programmer operator" data-action="not">NOT</button>
+
+      <!-- Statistics -->
+      <button class="mode-btn statistics operator" data-action="sumx">Σx</button>
+      <button class="mode-btn statistics operator" data-action="sumx2">Σx²</button>
+      <button class="mode-btn statistics operator" data-action="n">n</button>
+      <button class="mode-btn statistics operator" data-action="mean">μ</button>
+      <button class="mode-btn statistics operator" data-action="stdev">σ</button>
+
+      <!-- Conversion -->
+      <button class="mode-btn conversion operator" data-action="c2f">°C→°F</button>
+      <button class="mode-btn conversion operator" data-action="f2c">°F→°C</button>
+      <button class="mode-btn conversion operator" data-action="m2ft">m→ft</button>
+      <button class="mode-btn conversion operator" data-action="ft2m">ft→m</button>
+
+      <!-- Graph placeholder -->
+      <button class="mode-btn graphing operator" disabled>Plot</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Made with ❤️ | 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
